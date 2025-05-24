@@ -75,7 +75,7 @@ def start_game():
                         break
             if status == "stay":
                 house_sum = house.total()
-                house_strs = house.show_second_card()
+                house_strs = house.show_cards()
                 print(f"The house has the {house_strs}. The house's total is {house_sum}.")
                 while house_sum < 17:
                     new_card = deck_.deal()
