@@ -3,8 +3,19 @@ from player import Player, House
 
 def start_game(): 
     continue_game = True
-    p1 = Player("J") #create input
-    p1_winnings = 0
+    p1 = Player(input("What is you name?")
+    while True:
+        p1_init_amt = input("What amount would you like to start with? Please enter a number.")
+        try:
+            p1_init_amt = float(p1_init_amt)
+            if p1_init_amt <= 0:
+                print("Amount must be a positive number.")
+            else:
+                print("Initial Amount Updated: $" + str(p1_init_amt))
+                break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+    p1_winnings = 
     house_winnings = 0
     house = House()
     while continue_game:
@@ -23,7 +34,7 @@ def start_game():
                 p1.receive(deck_.deal())
                 house.receive(deck_.deal())
             while True:
-                bet_amt = input("What amount bet would you like to place? $")
+                bet_amt = input("What bet would you like to place? $")
                 try:
                     bet_amt = float(bet_amt)
                     if bet_amt <= 0:
