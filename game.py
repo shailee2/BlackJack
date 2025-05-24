@@ -56,8 +56,8 @@ def start_game():
             print(f"You are dealt the {card_strs}. Your total is {p1_sum}.")
             status = "tbd"
             while status not in ["stay","hit"]:
-                status = input("Would you like to stay or hit?").lower()
-                if status not in ["stay","hit"]:
+                status = input("Would you like to hit or stand?").lower()
+                if status not in ["stand","hit"]:
                     print("This is an invalid input.")
             if status == "hit":
                 while True:
@@ -70,10 +70,10 @@ def start_game():
                         house_winnings += bet_amt
                         p1_winnings -= bet_amt
                         break
-                    status = input("Would you like to stay or hit?").lower()
-                    if status == "stay":
+                    status = input("Would you like to hit or stand?").lower()
+                    if status == "stand":
                         break
-            if status == "stay":
+            if status == "stand":
                 house_sum = house.total()
                 house_strs = house.show_cards()
                 print(f"The dealer has the {house_strs}. The dealer's total is {house_sum}.")
