@@ -52,7 +52,7 @@ def start_game():
                 print(f"You win 1.5 times your bet! Total winnings: ${p1_winnings}")
                 continue 
             house_card_1.showfirstcard()
-            print(f"House has the {house_card_1}.")
+            print(f"Dealer has the {house_card_1}.")
             print(f"You are dealt the {card_strs}. Your total is {p1_sum}.")
             status = "tbd"
             while status not in ["stay","hit"]:
@@ -76,18 +76,18 @@ def start_game():
             if status == "stay":
                 house_sum = house.total()
                 house_strs = house.show_cards()
-                print(f"The house has the {house_strs}. The house's total is {house_sum}.")
+                print(f"The dealer has the {house_strs}. The dealer's total is {house_sum}.")
                 while house_sum < 17:
                     new_card = deck_.deal()
                     house.receive(new_card)
                     house_sum = house.total()
-                    print(f"House hits and draws {new_card}. Total is now {house_sum}.")
+                    print(f"Dealer hits and draws {new_card}. Total is now {house_sum}.")
                 if house_sum > 21 or house_sum < p1_sum:
                     print("You win!")
                     p1_winnings += bet_amt
                     house_winnings -= bet_amt
                 elif house_sum > p1_sum:
-                    print("House wins.")
+                    print("Dealer wins.")
                     house_winnings += bet_amt
                     p1_winnings -= bet_amt
                 else:
