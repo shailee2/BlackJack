@@ -26,6 +26,9 @@ def start_game():
             continue_game = False
             print("Game Over")
         else:
+            if p1_init_amt <= 0:
+                print("Insufficient Funds. Game Over")
+                break
             deck_ = Deck() #creates the deck we are using
             deck_.shuffle() #shuffle deck
             p1.clear()
@@ -39,6 +42,8 @@ def start_game():
                     bet_amt = float(bet_amt)
                     if bet_amt <= 0:
                         print("Bet must be a positive number.")
+                    elif bet_amt > p1_init_amt:
+                        print("Insufficient funds.")
                     else:
                         print("Bet placed: $" + str(bet_amt))
                         break
