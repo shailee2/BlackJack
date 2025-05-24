@@ -32,5 +32,7 @@ class Player:
 class House(Player):
     def __init__(self):
         super().__init__("House")
-
+        
+    def show_first_card(self):
+        return self.cards[0]
     
