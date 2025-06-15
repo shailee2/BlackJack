@@ -18,7 +18,7 @@ This project implements a simplified version of Blackjack, letting a player plac
 
 1. **Clone the repository:**<br>
    ```
-   ```bash
+   bash
    git clone https://github.com/shailee2/BlackJack.git
    cd BlackJack
 2. **Run the game:** <br>
